@@ -19,12 +19,12 @@ var datetime = "Last Sync: " + currentdate.getDate() + "/"
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds()+"\n";
 
-// cron.schedule('* * * * *', () => {
-//     fs.appendFile('./a.txt',datetime,(err)=>{
-//         if(err) return console.log(err);
-//         else return console.log('sucess cron job')
-//     })
-//   });
+            cron.schedule('* * * * *', () => {
+                fs.appendFile('./a.txt',datetime,(err)=>{
+                    if(err) return console.log(err);
+                    else return console.log('sucess cron job')
+                })
+            });
 
 mongoose.connect('mongodb+srv://rhino11:rhino11@cluster0.klzdx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
 
